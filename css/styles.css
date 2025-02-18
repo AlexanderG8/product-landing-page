@@ -647,7 +647,7 @@ footer {
     padding: var(--spacing-lg);
     position: relative;
     overflow: hidden;
-    background-image: url('./img/ProductosEcologicos.jpg'); /* Asegúrate de tener esta imagen */
+    background-image: url('/img/productosecologicos.jpg'); /* Asegúrate de tener esta imagen */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
