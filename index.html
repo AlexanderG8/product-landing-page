@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoProduct - Producto Sustentable</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header role="banner">
+        <div class="header-container">
+            <nav role="navigation">
+                <ul>
+                    <li><a href="#hero" aria-current="page">Inicio</a></li>
+                    <li><a href="#caracteristicas">Características</a></li>
+                    <li><a href="#envios">Envíos</a></li>
+                    <li><a href="#pagos">Pagos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" aria-label="Cambiar modo oscuro">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main role="main">
+        <section id="hero">
+            <h1>EcoProduct</h1>
+            <p>La solución sustentable que cuida el medio ambiente y mejora tu vida diaria</p>
+            <a href="#caracteristicas" class="cta-button">Descubre más</a>
+        </section>
+
+        <section id="caracteristicas">
+            <h2>Características Principales</h2>
+            <div class="features-grid">
+                <article>
+                    <img src="img/agradable.svg" alt="Ícono de producto eco-amigable">
+                    <h3>100% Eco-amigable</h3>
+                    <p>Fabricado con materiales biodegradables y procesos sustentables.</p>
+                </article>
+                <article>
+                    <img src="img/durabilidad.svg" alt="Ícono de durabilidad">
+                    <h3>Alta Durabilidad</h3>
+                    <p>Diseñado para durar años, reduciendo la necesidad de reemplazo.</p>
+                </article>
+                <article>
+                    <img src="img/certificado.svg" alt="Ícono de certificación">
+                    <h3>Certificado</h3>
+                    <p>Avalado por las principales certificadoras ambientales.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="envios">
+            <h2>Opciones de Envío</h2>
+            <div class="shipping-options">
+                <div class="coverage">
+                    <h3>Zonas de Cobertura</h3>
+                    <ul>
+                        <li>Lima Metropolitana</li>
+                        <li>Trujillo</li>
+                        <li>Chiclayo</li>
+                        <li>Arequipa</li>
+                    </ul>
+                </div>
+                <div class="shipping-types">
+                    <h3>Tipos de Envío</h3>
+                    <ul>
+                        <li>Express (24-48 hrs) - $199</li>
+                        <li>Estándar (3-5 días) - $99</li>
+                        <li>Gratuito en compras mayores a $999</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="pagos">
+            <h2>Métodos de Pago</h2>
+            <div class="payment-options">
+                <ul>
+                    <li>Tarjetas de crédito y débito</li>
+                    <li>PayPal</li>
+                    <li>Transferencia bancaria</li>
+                    <li>Yape o Plin</li>
+                </ul>
+                <div class="promotions">
+                    <h3>Promociones Actuales</h3>
+                    <p>3 meses sin intereses en compras mayores a $500</p>
+                    <p>6 y 12 meses sin intereses en compras mayores a $1000</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <div class="contact-info">
+                <h2>Contacto</h2>
+                <ul>
+                    <li>📧 <a href="mailto:info@ecoproduct.com">info@ecoproduct.com</a></li>
+                    <li>📞 <a href="tel:+525555555555">55 5555 5555</a></li>
+                    <li style="color: white;">🕒 Lunes a Viernes 9:00 - 18:00</li>
+                </ul>
+            </div>
+            <div class="important-links">
+                <h3>Enlaces Importantes</h3>
+                <ul>
+                    <li><a href="/terminos">→ Términos y Condiciones</a></li>
+                    <li><a href="/privacidad">→ Política de Privacidad</a></li>
+                    <li><a href="/faq">→ Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <h3>Síguenos en Redes</h3>
+                <ul>
+                    <li><a href="#" aria-label="Síguenos en Facebook">Facebook</a></li>
+                    <li><a href="#" aria-label="Síguenos en Instagram">Instagram</a></li>
+                    <li><a href="#" aria-label="Síguenos en Twitter">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        // Verificar preferencia del sistema
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark-mode');
+        }
+
+        // Cambiar tema al hacer click en el botón
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>

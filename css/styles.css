@@ -1,0 +1,641 @@
+/* Reset CSS */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables CSS */
+:root {
+    /* Colores */
+    --color-primary: #2ecc71;
+    --color-secondary: #27ae60;
+    --color-dark: #2c3e50;
+    --color-light: #ecf0f1;
+    --color-white: #ffffff;
+    
+    /* Tipografía */
+    --font-primary: system-ui, -apple-system, sans-serif;
+    
+    /* Espaciado */
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    
+    /* Contenedor */
+    --container-max-width: 1200px;
+}
+
+/* Estilos Base */
+body {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header y Navegación */
+header {
+    background-color: var(--color-white);
+    padding: var(--spacing-sm);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: var(--spacing-md);
+}
+
+nav a {
+    color: var(--color-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--color-primary);
+}
+
+/* Hero Section */
+#hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-white);
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+#hero p {
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin-bottom: var(--spacing-md);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+/* Sección Características */
+#caracteristicas {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg) 0;
+}
+
+#caracteristicas h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+}
+
+#caracteristicas h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--color-primary);
+    border-radius: 2px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    padding: 0 var(--spacing-lg);
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}
+
+.features-grid article {
+    background: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.features-grid article::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.features-grid article:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.features-grid article:hover::before {
+    transform: scaleX(1);
+}
+
+.features-grid img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: var(--spacing-md);
+}
+
+.features-grid h3 {
+    color: var(--color-dark);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Sección Envíos */
+#envios {
+    background-color: var(--color-light);
+    padding: var(--spacing-lg) 0;
+}
+
+#envios h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-dark);
+    position: relative;
+}
+
+#envios h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--color-primary);
+    border-radius: 2px;
+}
+
+.shipping-options {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    padding: 0 var(--spacing-lg);
+}
+
+.coverage, .shipping-types {
+    background: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.coverage h3, .shipping-types h3 {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.coverage ul, .shipping-types ul {
+    list-style: none;
+}
+
+.coverage li, .shipping-types li {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+}
+
+.coverage li::before, .shipping-types li::before {
+    content: '✓';
+    color: var(--color-primary);
+    margin-right: var(--spacing-sm);
+    font-weight: bold;
+}
+
+/* Sección Pagos */
+#pagos {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg) 0;
+}
+
+#pagos h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-dark);
+    position: relative;
+}
+
+#pagos h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--color-primary);
+    border-radius: 2px;
+}
+
+.payment-options {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.payment-options ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.payment-options li {
+    background: var(--color-light);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.payment-options li:hover {
+    transform: scale(1.05);
+}
+
+.promotions {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: 16px;
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}
+
+.promotions h3 {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.promotions p {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-sm);
+    opacity: 0.9;
+}
+
+/* Footer Mejorado */
+footer {
+    background: linear-gradient(to right, var(--color-dark), #1a242f);
+    color: var(--color-white);
+    padding: var(--spacing-lg) 0;
+    margin-top: var(--spacing-lg);
+}
+
+.footer-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.contact-info, .important-links, .social-media {
+    padding: var(--spacing-md);
+}
+
+.footer-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+}
+
+.footer-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 2px;
+}
+
+.footer-container h3 {
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+}
+
+.footer-container ul {
+    list-style: none;
+}
+
+.footer-container li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-container a {
+    color: var(--color-light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer-container a:hover {
+    color: var(--color-primary);
+    transform: translateX(5px);
+}
+
+.social-media ul {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.social-media a {
+    background: rgba(255,255,255,0.1);
+    padding: var(--spacing-sm);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-media a:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .features-grid, .shipping-options, .payment-options ul {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-container h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-media ul {
+        justify-content: center;
+    }
+}
+
+/* Variables CSS */
+:root {
+    /* Colores modo claro */
+    --color-primary: #2ecc71;
+    --color-secondary: #27ae60;
+    --color-dark: #2c3e50;
+    --color-light: #ecf0f1;
+    --color-white: #ffffff;
+    --color-bg: #ffffff;
+    --color-text: #2c3e50;
+    --color-card-bg: #ffffff;
+    --color-card-shadow: rgba(0,0,0,0.1);
+    --color-border: rgba(0,0,0,0.1);
+    --gradient-primary: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+    --gradient-dark: linear-gradient(to right, var(--color-dark), #1a242f);
+}
+
+/* Variables modo oscuro */
+.dark-mode {
+    --color-primary: #4eda8b;
+    --color-secondary: #45c17a;
+    --color-dark: #1a1a1a;
+    --color-light: #2a2a2a;
+    --color-white: #1a1a1a;
+    --color-bg: #121212;
+    --color-text: #ecf0f1;
+    --color-card-bg: #1e1e1e;
+    --color-card-shadow: rgba(0,0,0,0.3);
+    --color-border: rgba(255,255,255,0.1);
+    --gradient-primary: linear-gradient(45deg, #4eda8b, #45c17a);
+    --gradient-dark: linear-gradient(to right, #121212, #1a1a1a);
+}
+
+/* Transición suave para cambios de tema */
+body * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilos del botón de tema */
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    font-size: 1.5rem;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-light);
+}
+
+#theme-toggle:hover {
+    background: var(--color-border);
+}
+
+.sun-icon, .moon-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dark-mode .sun-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.dark-mode .moon-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0);
+}
+
+.sun-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0);
+}
+
+.moon-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+/* Header */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Actualizaciones para modo oscuro */
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+header {
+    background-color: var(--color-card-bg);
+}
+
+.features-grid article {
+    background-color: var(--color-card-bg);
+    box-shadow: 0 10px 30px var(--color-card-shadow);
+}
+
+.coverage, .shipping-types {
+    background-color: var(--color-card-bg);
+    box-shadow: 0 10px 30px var(--color-card-shadow);
+}
+
+.payment-options li {
+    background-color: var(--color-light);
+}
+
+footer {
+    background: var(--gradient-dark);
+}
+
+/* Ajustes de contraste para modo oscuro */
+.dark-mode .features-grid article h3,
+.dark-mode .coverage h3,
+.dark-mode .shipping-types h3 {
+    color: var(--color-primary);
+}
+
+.dark-mode .payment-options li {
+    color: var(--color-text);
+}
+
+.dark-mode nav a {
+    color: var(--color-text);
+}
+
+.dark-mode nav a:hover {
+    color: var(--color-primary);
+}
+
+.dark-mode .coverage li::before,
+.dark-mode .shipping-types li::before {
+    color: var(--color-primary);
+}
+
+/* Ajustes para links en modo oscuro */
+.dark-mode a {
+    color: var(--color-primary);
+}
+
+.dark-mode a:hover {
+    color: var(--color-secondary);
+}
+
+/* Hero section en modo oscuro */
+.dark-mode #hero {
+    background: var(--gradient-primary);
+}
+
+/* Ajustes de bordes y separadores */
+.dark-mode .coverage li,
+.dark-mode .shipping-types li {
+    border-bottom-color: var(--color-border);
+}
+
+/* Media query para preferencia de color del sistema */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Aplicar variables de modo oscuro por defecto si el sistema lo prefiere */
+        color-scheme: dark;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    #theme-toggle {
+        position: absolute;
+        top: var(--spacing-sm);
+        right: var(--spacing-sm);
+    }
+}
+
+.dark-mode h2 {
+    color: #ffffff !important; /* Usamos !important para asegurar que se aplique sobre otros estilos */
+}
+
+/* Si queremos ser más específicos, podemos targetear cada sección */
+.dark-mode #caracteristicas h2,
+.dark-mode #envios h2,
+.dark-mode #pagos h2 {
+    color: #ffffff;
+}
+
+/* También ajustamos el subrayado decorativo para que sea más visible */
+.dark-mode #caracteristicas h2::after,
+.dark-mode #envios h2::after,
+.dark-mode #pagos h2::after {
+    background: var(--color-primary);
+    opacity: 0.8;
+}
