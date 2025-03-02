@@ -784,7 +784,7 @@ footer {
 
 .testimonial-card {
     flex: 1 1 calc(33% - var(--spacing-md));
-    max-width: calc(33% - var(--spacing-md));
+    /* max-width: calc(33% - var(--spacing-md)); */
     background-color: var(--color-light);
     padding: var(--spacing-md);
     border-radius: 12px;

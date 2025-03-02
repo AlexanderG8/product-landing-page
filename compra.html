@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar - EcoProduct</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/compra.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#caracteristicas">Características</a></li>
+                    <li><a href="index.html#galeria">Galería</a></li>
+                    <li><a href="#" aria-current="page">Comprar</a></li>
+                    <li><a href="testimonios.html">Testimonios</a></li>
+                    <li><a href="index.html#envios">Envíos</a></li>
+                    <li><a href="index.html#pagos">Pagos</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" aria-label="Cambiar modo oscuro">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-layout">
+        <aside class="sidebar">
+            <div class="purchase-options">
+                <h2>Opciones de Compra</h2>
+                <div class="option-group">
+                    <h3>Tamaño</h3>
+                    <select id="size" aria-label="Seleccionar tamaño">
+                        <option value="small">Pequeño</option>
+                        <option value="medium">Mediano</option>
+                        <option value="large">Grande</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <h3>Color</h3>
+                    <div class="color-options">
+                        <label>
+                            <input type="radio" name="color" value="natural">
+                            Natural
+                        </label>
+                        <label>
+                            <input type="radio" name="color" value="verde">
+                            Verde
+                        </label>
+                        <label>
+                            <input type="radio" name="color" value="marron">
+                            Marrón
+                        </label>
+                    </div>
+                </div>
+                <div class="option-group">
+                    <h3>Cantidad</h3>
+                    <div class="quantity-selector">
+                        <button id="decrease">-</button>
+                        <input type="number" id="quantity" value="1" min="1" max="10">
+                        <button id="increase">+</button>
+                    </div>
+                </div>
+                <div class="price-summary">
+                    <h3>Resumen</h3>
+                    <div class="price-details">
+                        <p>Precio unitario: <span>S/299</span></p>
+                        <p>Cantidad: <span id="quantity-display">1</span></p>
+                        <p>Envío: <span>Gratis</span></p>
+                        <p class="total">Total: <span id="total-price">S/299</span></p>
+                    </div>
+                </div>
+                <button id="whatsapp-button" class="cta-button">
+                    Comprar por WhatsApp
+                    <span class="whatsapp-icon">📱</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="product-content">
+            <section class="product-details">
+                <h1>EcoProduct</h1>
+                <div class="product-gallery">
+                    <img src="img/producto1.jpg" alt="Producto principal" class="main-image">
+                    <div class="thumbnail-grid">
+                        <img src="img/producto2.jpg" alt="Vista alternativa 1">
+                        <img src="img/producto3.jpg" alt="Vista alternativa 2">
+                        <img src="img/producto4.jpg" alt="Vista alternativa 3">
+                    </div>
+                </div>
+                <div class="product-description">
+                    <h2>Descripción del Producto</h2>
+                    <p>Nuestro producto ecológico está diseñado para reducir tu huella ambiental mientras mejora tu calidad de vida. Fabricado con materiales 100% biodegradables y procesos sostenibles.</p>
+                    <ul class="features-list">
+                        <li>✔️ Material biodegradable</li>
+                        <li>✔️ Durabilidad garantizada</li>
+                        <li>✔️ Certificación ecológica</li>
+                        <li>✔️ Empaque reciclable</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <footer>
+            <div class="footer-container">
+                <div class="contact-info">
+                    <h2>Contacto</h2>
+                    <ul>
+                        <li>📧 <a href="mailto:info@ecoproduct.com">info@ecoproduct.com</a></li>
+                        <li>📞 <a href="tel:+525555555555">55 5555 5555</a></li>
+                        <li style="color: white;">🕒 Lunes a Viernes 9:00 - 18:00</li>
+                    </ul>
+                </div>
+                <div class="important-links">
+                    <h3>Enlaces Importantes</h3>
+                    <ul>
+                        <li><a href="/terminos">→ Términos y Condiciones</a></li>
+                        <li><a href="/privacidad">→ Política de Privacidad</a></li>
+                        <li><a href="/faq">→ Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="social-media">
+                    <h3>Síguenos en Redes</h3>
+                    <ul>
+                        <li><a href="#" aria-label="Síguenos en Facebook">Facebook</a></li>
+                        <li><a href="#" aria-label="Síguenos en Instagram">Instagram</a></li>
+                        <li><a href="#" aria-label="Síguenos en Twitter">TikTok</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </footer>
+
+    <script src="./js/theme.js"></script>
+    <script src="./js/compra.js"></script>
+</body>
+</html>
