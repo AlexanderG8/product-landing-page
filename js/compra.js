@@ -69,4 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
             thumb.src = tempSrc;
         });
     });
+
+    function showSlide(index) {
+        const carousel = new bootstrap.Carousel(document.getElementById('productCarousel'));
+        carousel.to(index);
+    }
 });

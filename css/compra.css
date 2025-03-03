@@ -84,7 +84,34 @@
     border-radius: 15px;
     margin-bottom: 1rem;
 }
+/* Estilos a mi carrusel */
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+}
 
+.thumbnail-grid img {
+    height: 80px;
+    /*object-fit: Cambio de tamaño para que se ajuste al contenedor
+    Cover: La imagen mantiene su relación de aspecto y rellena la dimensión dada. La imagen se recortará para que quepa*/
+    object-fit: cover;
+    cursor: pointer; /*?*/
+    transition: opacity 0.3s ease;
+}
+
+.thumbnail-grid img:hover {
+    opacity: 0.8;
+}
+
+.carousel-indicators {
+    margin-bottom: -1rem;
+}
+
+.carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
 .thumbnail-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
