@@ -317,3 +317,173 @@ git checkout tailwind
 git merge bootstrap
 git merge tailwind
 ```
+
+## 🎯 Retos
+Cada estudiante deberá implementar al menos 2 nuevas Historias de Usuario y demostrar su funcionamiento en la presentación.
+
+### HU1: Tarjetas de Beneficios (Tailwind)
+Como visitante del sitio, quiero ver los beneficios del producto en tarjetas interactivas para entender mejor las ventajas de manera visual y atractiva.
+
+Criterios de Aceptación:
+
+1. Mostrar 4 tarjetas con iconos y texto.
+2. Efecto hover con cambio suave de color.
+3. Diseño responsive (1 columna en moviles, 2 columnas en tablest, 4 en desktop).
+4. Iconos representativos para cada beneficio.
+
+### Desarrollo
+El desarrollo se realizo en la rama hu1 para lo cual se utilizaron los siguientes comando para su creación y acceso.
+```sql
+/*Para crear rama*/
+git branch hu1
+/*Para acceder a la rama*/
+git checkout hu1
+```
+#### **index.html**
+```html
+<section id="beneficios" class="py-20 bg-white">
+        <h2 class="text-4xl font-bold text-center mb-16 relative">
+            Beneficios Principales
+            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary"></span>
+        </h2>
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Tarjeta 1 -->
+            <div class="bg-light rounded-xl p-6 hover:bg-primary hover:text-white transition-all duration-300 transform hover:-translate-y-2">
+                <div class="text-4xl mb-4">🌱</div>
+                <h3 class="text-xl font-semibold mb-2">Eco-Friendly</h3>
+                <p>100% biodegradable y respetuoso con el medio ambiente</p>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="bg-light rounded-xl p-6 hover:bg-primary hover:text-white transition-all duration-300 transform hover:-translate-y-2">
+                <div class="text-4xl mb-4">♻️</div>
+                <h3 class="text-xl font-semibold mb-2">Reciclable</h3>
+                <p>Materiales completamente reciclables y reutilizables</p>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="bg-light rounded-xl p-6 hover:bg-primary hover:text-white transition-all duration-300 transform hover:-translate-y-2">
+                <div class="text-4xl mb-4">💪</div>
+                <h3 class="text-xl font-semibold mb-2">Duradero</h3>
+                <p>Diseñado para una larga vida útil y resistencia</p>
+            </div>
+
+            <!-- Tarjeta 4 -->
+            <div class="bg-light rounded-xl p-6 hover:bg-primary hover:text-white transition-all duration-300 transform hover:-translate-y-2">
+                <div class="text-4xl mb-4">🌍</div>
+                <h3 class="text-xl font-semibold mb-2">Impacto Global</h3>
+                <p>Contribuye a la reducción de la huella de carbono</p>
+            </div>
+        </div>
+    </section>
+```
+
+### HU2: Galería de Productos (Bootstrap)
+Como cliente potencial, quiero ver una galería de imágenes del producto en formato carrusel para visualizar mejor los detalles y diferentes ángulos.
+
+Criterios de Aceptación:
+
+1. Carrusel con controles de navegación.
+2. Indicadores de posición.
+3. Transiciones suaves entre imágenes.
+4. Adaptable a diferentes tamaños de pantalla.
+
+### Desarrollo
+El desarrollo se realizo en la rama hu2 para lo cual se utilizaron los siguientes comando para su creación y acceso.
+```sql
+/*Para crear rama*/
+git branch hu2
+/*Para acceder a la rama*/
+git checkout hu2
+```
+#### **compra.html**
+```html
+<div class="col-md-8">
+    <h1 class="mb-4">EcoProduct</h1>
+    
+    <div id="productCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="3"></button>
+        </div>
+        
+        <div class="carousel-inner rounded-4">
+            <div class="carousel-item active">
+                <img src="img/producto1.jpg" class="d-block w-100" alt="Producto vista principal">
+            </div>
+            <div class="carousel-item">
+                <img src="img/producto2.jpg" class="d-block w-100" alt="Producto vista lateral">
+            </div>
+            <div class="carousel-item">
+                <img src="img/producto3.jpg" class="d-block w-100" alt="Producto en uso">
+            </div>
+            <div class="carousel-item">
+                <img src="img/producto4.jpg" class="d-block w-100" alt="Producto detalles">
+            </div>
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+
+    <div class="row g-2 thumbnail-grid">
+        <div class="col-3">
+            <img src="img/producto1.jpg" class="img-fluid rounded cursor-pointer" alt="Miniatura 1" onclick="showSlide(0)">
+        </div>
+        <div class="col-3">
+            <img src="img/producto2.jpg" class="img-fluid rounded cursor-pointer" alt="Miniatura 2" onclick="showSlide(1)">
+        </div>
+        <div class="col-3">
+            <img src="img/producto3.jpg" class="img-fluid rounded cursor-pointer" alt="Miniatura 3" onclick="showSlide(2)">
+        </div>
+        <div class="col-3">
+            <img src="img/producto4.jpg" class="img-fluid rounded cursor-pointer" alt="Miniatura 4" onclick="showSlide(3)">
+        </div>
+    </div>
+</div>
+```
+
+#### **compra.css**
+```css
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.thumbnail-grid img {
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.thumbnail-grid img:hover {
+    opacity: 0.8;
+}
+
+.carousel-indicators {
+    margin-bottom: -1rem;
+}
+
+.carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+```
+
+#### **compra.js**
+```javascript
+function showSlide(index) {
+    const carousel = new bootstrap.Carousel(document.getElementById('productCarousel'));
+    carousel.to(index);
+}
+```
