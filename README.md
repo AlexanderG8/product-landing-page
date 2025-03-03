@@ -297,3 +297,23 @@ Se implemento nuevas secciones como Galeria de Fotos y Testimonios, de las cuale
     }
 }
 ```
+
+## Framework CSS (Bootstrap / Tailwind CSS)
+
+### ¿con qué librería/framework te sentiste más cómodo trabajando y por qué (Bootstrap / Tailwind CSS)?
+En mi experiencia desarrollando con bootstrap y tailwind CSS, me sentí mas comodo con Tailwind CSS debido a que flexibilidad a diseños personalizados. Sin embargo hay que destacar lo siguiente, si vas a desarrollar una pagina web o un app web, donde el diseño se destaca, lo más recomandable seria utilizar Tailwind CSS. Pero si vas a desarrollar una app web con alta complejidad, las funcionalidad seran repetitivas, y con un grupo de personas lo más recomendable es utilizar Bootstrap debido a diseños ya predefinidos y facil de utilizar.
+
+### Comandos utilizados para crear, cambiar y fusionar las ramas
+```sql
+--Para crear rama
+git branch bootstrap
+git branch tailwind
+
+--Para cambiar de una rama a otra rama
+git checkout bootstrap
+git checkout tailwind
+
+--Para realizar merge
+git merge bootstrap
+git merge tailwind
+```
