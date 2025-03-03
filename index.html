@@ -4,172 +4,243 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoProduct - Producto Sustentable</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2ecc71',
+                        secondary: '#27ae60',
+                        dark: '#2c3e50',
+                        light: '#ecf0f1',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header>
-        <div class="header-container">
-            <nav>
-                <ul>
-                    <li><a href="#hero" aria-current="page">Inicio</a></li>
-                    <li><a href="#caracteristicas">Características</a></li>
-                    <li><a href="#galeria">Galeria</a></li>
-                    <li><a href="compra.html">Comprar</a></li>
-                    <li><a href="testimonios.html">Testimonios</a></li>
-                    <li><a href="#envios">Envíos</a></li>
-                    <li><a href="#pagos">Pagos</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
+<body class="bg-light">
+    <header class="fixed w-full top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <nav class="relative">
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+
+                <!-- Navigation menu -->
+                <div id="nav-menu" class="hidden md:block absolute md:relative w-full left-0 top-full md:top-auto bg-white md:bg-transparent">
+                    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 p-4 md:p-0">
+                        <li><a href="#hero" class="block py-2 md:py-4 text-dark hover:text-primary transition-colors">Inicio</a></li>
+                        <li><a href="#caracteristicas" class="block py-2 md:py-4 text-dark hover:text-primary transition-colors">Características</a></li>
+                        <li><a href="#galeria" class="block py-2 md:py-4 text-dark hover:text-primary transition-colors">Galeria</a></li>
+                        <li><a href="compra.html" class="block py-2 md:py-4 text-dark hover:text-primary transition-colors">Comprar</a></li>
+                        <li><a href="testimonios.html" class="block py-2 md:py-4 text-dark hover:text-primary transition-colors">Testimonios</a></li>
+                        <li><a href="#envios" class="block py-2 md:py-4 text-dark hover:text-primary transition-colors">Envíos</a></li>
+                        <li><a href="#pagos" class="block py-2 md:py-4 text-dark hover:text-primary transition-colors">Pagos</a></li>
+                        <li><a href="#contacto" class="block py-2 md:py-4 text-dark hover:text-primary transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Theme toggle -->
+                <button id="theme-toggle" class="absolute right-0 top-0 p-2 rounded-full hover:bg-gray-100">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
             </nav>
-            <button id="theme-toggle" aria-label="Cambiar modo oscuro">
-                <span class="sun-icon">☀️</span>
-                <span class="moon-icon">🌙</span>
-            </button>
         </div>
     </header>
 
     <main>
-        <section id="hero">
-            <h1>EcoProduct</h1>
-            <p>La solución sustentable que cuida el medio ambiente y mejora tu vida diaria</p>
-            <a href="#caracteristicas" class="cta-button">
+        <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-primary to-secondary text-white px-4">
+            <h1 class="text-5xl font-bold mb-6">EcoProduct</h1>
+            <p class="text-xl max-w-2xl mb-8">La solución sustentable que cuida el medio ambiente y mejora tu vida diaria</p>
+            <a href="#caracteristicas" class="bg-white text-primary px-8 py-3 rounded-full hover:bg-opacity-90 transition-all transform hover:-translate-y-1">
                 Descubre más
-                <span class="arrow">→</span>
+                <span class="ml-2">→</span>
             </a>
         </section>
 
-        <section id="caracteristicas">
-            <h2>Características Principales</h2>
-            <div class="features-grid">
-                <article>
-                    <img src="img/agradable.svg" alt="Ícono de producto eco-amigable">
-                    <h3>100% Eco-amigable</h3>
-                    <p>Fabricado con materiales biodegradables y procesos sustentables.</p>
+        <section id="caracteristicas" class="py-20 bg-white">
+            <h2 class="text-4xl font-bold text-center mb-16 relative">
+                Características Principales
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary"></span>
+            </h2>
+            <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <article class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-2 transition-all">
+                    <img src="img/agradable.svg" alt="Ícono de producto eco-amigable" class="w-20 h-20 mx-auto mb-6">
+                    <h3 class="text-xl font-semibold mb-4">100% Eco-amigable</h3>
+                    <p class="text-gray-600">Fabricado con materiales biodegradables y procesos sustentables.</p>
                 </article>
-                <article>
-                    <img src="img/durabilidad.svg" alt="Ícono de durabilidad">
-                    <h3>Alta Durabilidad</h3>
-                    <p>Diseñado para durar años, reduciendo la necesidad de reemplazo.</p>
+                <article class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-2 transition-all">
+                    <img src="img/durabilidad.svg" alt="Ícono de durabilidad" class="w-20 h-20 mx-auto mb-6">
+                    <h3 class="text-xl font-semibold mb-4">Alta Durabilidad</h3>
+                    <p class="text-gray-600">Diseñado para durar años, reduciendo la necesidad de reemplazo.</p>
                 </article>
-                <article>
-                    <img src="img/certificado.svg" alt="Ícono de certificación">
-                    <h3>Certificado</h3>
-                    <p>Avalado por las principales certificadoras ambientales.</p>
-                </article>
-            </div>
-        </section>
-        <section id="galeria">
-            <h2>Galería de Imágenes</h2>
-            <div class="gallery-flex">
-                <img src="img/producto1.jpg" alt="Producto 1">
-                <img src="img/producto2.jpg" alt="Producto 2">
-                <img src="img/producto3.jpg" alt="Producto 3">
-                <img src="img/producto4.jpg" alt="Producto 4">
-                <img src="img/producto5.jpg" alt="Producto 5">
-                <img src="img/producto6.jpg" alt="Producto 6">
-                <img src="img/producto7.jpg" alt="Producto 7">
-                <img src="img/producto8.jpg" alt="Producto 8">
-            </div>
-        </section>
-        <section id="testimonios">
-            <h2>Testimonios de Clientes</h2>
-            <div class="testimonials-flex">
-                <article class="testimonial-card">
-                    <p>"Este producto ha cambiado mi vida para mejor. ¡Altamente recomendado!"</p>
-                    <h4>- Juan Pérez</h4>
-                </article>
-                <article class="testimonial-card">
-                    <p>"La calidad es excelente y el servicio al cliente es inmejorable."</p>
-                    <h4>- María López</h4>
-                </article>
-                <article class="testimonial-card">
-                    <p>"Sostenible y duradero, justo lo que estaba buscando."</p>
-                    <h4>- Carlos García</h4>
-                </article>
-                <article class="testimonial-card">
-                    <p>"Este producto ha cambiado mi vida para mejor. ¡Altamente recomendado!"</p>
-                    <h4>- Alex Díaz</h4>
-                </article>
-                <article class="testimonial-card">
-                    <p>"La calidad es excelente y el servicio al cliente es inmejorable."</p>
-                    <h4>- Mario Campos</h4>
-                </article>
-                <article class="testimonial-card">
-                    <p>"Sostenible y duradero, justo lo que estaba buscando."</p>
-                    <h4>- Alexander Gomez</h4>
+                <article class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-2 transition-all">
+                    <img src="img/certificado.svg" alt="Ícono de certificación" class="w-20 h-20 mx-auto mb-6">
+                    <h3 class="text-xl font-semibold mb-4">Certificado</h3>
+                    <p class="text-gray-600">Avalado por las principales certificadoras ambientales.</p>
                 </article>
             </div>
         </section>
-        <section id="envios">
-            <h2>Opciones de Envío</h2>
-            <div class="shipping-options">
-                <div class="coverage">
-                    <h3>Zonas de Cobertura</h3>
-                    <ul>
-                        <li>Lima Metropolitana</li>
-                        <li>Trujillo</li>
-                        <li>Chiclayo</li>
-                        <li>Arequipa</li>
+
+        <section id="galeria" class="py-20 bg-light">
+            <h2 class="text-4xl font-bold text-center mb-16 relative">
+                Galería de Imágenes
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary"></span>
+            </h2>
+            <div class="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="img/producto1.jpg" alt="Producto 1" class="w-full rounded-lg hover:scale-105 transition-transform">
+                <img src="img/producto2.jpg" alt="Producto 2" class="w-full rounded-lg hover:scale-105 transition-transform">
+                <img src="img/producto3.jpg" alt="Producto 3" class="w-full rounded-lg hover:scale-105 transition-transform">
+                <img src="img/producto4.jpg" alt="Producto 4" class="w-full rounded-lg hover:scale-105 transition-transform">
+                <img src="img/producto5.jpg" alt="Producto 5" class="w-full rounded-lg hover:scale-105 transition-transform">
+                <img src="img/producto6.jpg" alt="Producto 6" class="w-full rounded-lg hover:scale-105 transition-transform">
+                <img src="img/producto7.jpg" alt="Producto 7" class="w-full rounded-lg hover:scale-105 transition-transform">
+                <img src="img/producto8.jpg" alt="Producto 8" class="w-full rounded-lg hover:scale-105 transition-transform">
+            </div>
+        </section>
+
+        <section id="testimonios" class="py-20 bg-white">
+            <h2 class="text-4xl font-bold text-center mb-16 relative">
+                Testimonios de Clientes
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary"></span>
+            </h2>
+            <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <article class="bg-light p-6 rounded-xl shadow-md">
+                    <p class="text-gray-700 mb-4">"Este producto ha cambiado mi vida para mejor. ¡Altamente recomendado!"</p>
+                    <h4 class="font-semibold text-dark">- Juan Pérez</h4>
+                </article>
+                <article class="bg-light p-6 rounded-xl shadow-md">
+                    <p class="text-gray-700 mb-4">"La calidad es excelente y el servicio al cliente es inmejorable."</p>
+                    <h4 class="font-semibold text-dark">- María López</h4>
+                </article>
+                <article class="bg-light p-6 rounded-xl shadow-md">
+                    <p class="text-gray-700 mb-4">"Sostenible y duradero, justo lo que estaba buscando."</p>
+                    <h4 class="font-semibold text-dark">- Carlos García</h4>
+                </article>
+            </div>
+        </section>
+
+        <section id="envios" class="py-20 bg-light">
+            <h2 class="text-4xl font-bold text-center mb-16 relative">
+                Envíos
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary"></span>
+            </h2>
+            <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-6 text-primary">Cobertura Nacional</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <span class="text-primary mr-2">✓</span>
+                            Lima Metropolitana: 24-48 horas
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-primary mr-2">✓</span>
+                            Provincias: 3-5 días hábiles
+                        </li>
                     </ul>
                 </div>
-                <div class="shipping-types">
-                    <h3>Tipos de Envío</h3>
-                    <ul>
-                        <li>Express (24-48 hrs) - $199</li>
-                        <li>Estándar (3-5 días) - $99</li>
-                        <li>Gratuito en compras mayores a $999</li>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-6 text-primary">Tipos de Envío</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <span class="text-primary mr-2">✓</span>
+                            Envío estándar gratuito
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-primary mr-2">✓</span>
+                            Envío express disponible
+                        </li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section id="pagos">
-            <h2>Métodos de Pago</h2>
-            <div class="payment-options">
-                <ul>
-                    <li>Tarjetas de crédito y débito</li>
-                    <li>PayPal</li>
-                    <li>Transferencia bancaria</li>
-                    <li>Yape o Plin</li>
-                </ul>
-                <div class="promotions">
-                    <h3>Promociones Actuales</h3>
-                    <p>3 meses sin intereses en compras mayores a $500</p>
-                    <p>6 y 12 meses sin intereses en compras mayores a $1000</p>
+        <section id="pagos" class="py-20 bg-white">
+            <h2 class="text-4xl font-bold text-center mb-16 relative">
+                Métodos de Pago
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary"></span>
+            </h2>
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                    <div class="bg-light p-6 rounded-lg text-center">
+                        <span class="text-2xl mb-2">💳</span>
+                        <p class="font-medium">Tarjeta de Crédito</p>
+                    </div>
+                    <div class="bg-light p-6 rounded-lg text-center">
+                        <span class="text-2xl mb-2">🏦</span>
+                        <p class="font-medium">Transferencia</p>
+                    </div>
+                    <div class="bg-light p-6 rounded-lg text-center">
+                        <span class="text-2xl mb-2">📱</span>
+                        <p class="font-medium">Yape</p>
+                    </div>
+                    <div class="bg-light p-6 rounded-lg text-center">
+                        <span class="text-2xl mb-2">💰</span>
+                        <p class="font-medium">Plin</p>
+                    </div>
                 </div>
             </div>
         </section>
-    </main>
-    
-    <footer>
-        <div class="footer-container">
-            <div class="contact-info">
-                <h2>Contacto</h2>
-                <ul>
-                    <li>📧 <a href="mailto:info@ecoproduct.com">info@ecoproduct.com</a></li>
-                    <li>📞 <a href="tel:+525555555555">55 5555 5555</a></li>
-                    <li style="color: white;">🕒 Lunes a Viernes 9:00 - 18:00</li>
-                </ul>
-            </div>
-            <div class="important-links">
-                <h3>Enlaces Importantes</h3>
-                <ul>
-                    <li><a href="/terminos">→ Términos y Condiciones</a></li>
-                    <li><a href="/privacidad">→ Política de Privacidad</a></li>
-                    <li><a href="/faq">→ Preguntas Frecuentes</a></li>
-                </ul>
-            </div>
-            <div class="social-media">
-                <h3>Síguenos en Redes</h3>
-                <ul>
-                    <li><a href="#" aria-label="Síguenos en Facebook">Facebook</a></li>
-                    <li><a href="#" aria-label="Síguenos en Instagram">Instagram</a></li>
-                    <li><a href="#" aria-label="Síguenos en Twitter">TikTok</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
 
-    <script src="./js/theme.js"></script>
-</body>
+        <footer class="bg-dark text-white py-16">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">Contacto</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center">
+                                <span class="mr-2">📧</span>
+                                <a href="mailto:info@ecoproduct.com" class="hover:text-primary transition-colors">info@ecoproduct.com</a>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="mr-2">📞</span>
+                                <a href="tel:+525555555555" class="hover:text-primary transition-colors">55 5555 5555</a>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="mr-2">🕒</span>
+                                Lunes a Viernes 9:00 - 18:00
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">Enlaces Importantes</h3>
+                        <ul class="space-y-4">
+                            <li>
+                                <a href="/terminos" class="hover:text-primary transition-colors">→ Términos y Condiciones</a>
+                            </li>
+                            <li>
+                                <a href="/privacidad" class="hover:text-primary transition-colors">→ Política de Privacidad</a>
+                            </li>
+                            <li>
+                                <a href="/faq" class="hover:text-primary transition-colors">→ Preguntas Frecuentes</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">Síguenos en Redes</h3>
+                        <ul class="space-y-4">
+                            <li>
+                                <a href="#" class="hover:text-primary transition-colors">Facebook</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-primary transition-colors">Instagram</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-primary transition-colors">TikTok</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="./js/theme.js"></script>
+        <script src="./js/menu.js"></script>
+    </body>
 </html>
