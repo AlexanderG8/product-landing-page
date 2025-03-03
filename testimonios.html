@@ -4,153 +4,233 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonios - EcoProduct</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/testimonios.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2ecc71',
+                        secondary: '#27ae60',
+                        dark: '#2c3e50',
+                        light: '#ecf0f1',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header class="main-header">
-        <div class="header-container">
-            <nav>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="index.html#caracteristicas">Características</a></li>
-                    <li><a href="index.html#galeria">Galería</a></li>
-                    <li><a href="compra.html">Comprar</a></li>
-                    <li><a href="#" aria-current="page">Testimonios</a></li>
-                    <li><a href="index.html#envios">Envíos</a></li>
-                    <li><a href="index.html#pagos">Pagos</a></li>
-                    <li><a href="index.html#contacto">Contacto</a></li>
-                </ul>
+<body class="bg-light">
+    <header class="fixed w-full top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <nav class="relative">
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+
+                <div id="nav-menu" class="hidden md:block absolute md:relative w-full left-0 top-full md:top-auto bg-white md:bg-transparent">
+                    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 p-4 md:p-0">
+                        <li><a href="index.html" class="block py-2 md:py-4 text-dark hover:text-primary transition-colors">Inicio</a></li>
+                        <li><a href="index.html#caracteristicas" class="block py-2 md:py-4 text-dark hover:text-primary transition-colors">Características</a></li>
+                        <li><a href="index.html#galeria" class="block py-2 md:py-4 text-dark hover:text-primary transition-colors">Galería</a></li>
+                        <li><a href="compra.html" class="block py-2 md:py-4 text-dark hover:text-primary transition-colors">Comprar</a></li>
+                        <li><a href="#" class="block py-2 md:py-4 text-primary font-semibold" aria-current="page">Testimonios</a></li>
+                        <li><a href="index.html#envios" class="block py-2 md:py-4 text-dark hover:text-primary transition-colors">Envíos</a></li>
+                        <li><a href="index.html#pagos" class="block py-2 md:py-4 text-dark hover:text-primary transition-colors">Pagos</a></li>
+                        <li><a href="index.html#contacto" class="block py-2 md:py-4 text-dark hover:text-primary transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <button id="theme-toggle" class="absolute right-0 top-0 p-2 rounded-full hover:bg-gray-100">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
             </nav>
-            <button id="theme-toggle" aria-label="Cambiar modo oscuro">
-                <span class="sun-icon">☀️</span>
-                <span class="moon-icon">🌙</span>
-            </button>
         </div>
     </header>
 
-    <div class="page-layout">
-        <aside class="sidebar">
-            <div class="filter-section">
-                <h2>Filtros</h2>
-                <div class="filter-group">
-                    <h3>Calificación</h3>
-                    <div class="rating-filters">
-                        <label><input type="checkbox" value="5"> 5 estrellas</label>
-                        <label><input type="checkbox" value="4"> 4 estrellas</label>
-                        <label><input type="checkbox" value="3"> 3 estrellas</label>
-                        <label><input type="checkbox" value="2"> 2 estrellas</label>
-                        <label><input type="checkbox" value="1"> 1 estrella</label>
+    <main class="pt-24">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-center mb-16 relative">
+                Testimonios de Nuestros Clientes
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary"></span>
+            </h1>
+
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                <!-- Sidebar con filtros -->
+                <aside class="lg:col-span-1">
+                    <div class="bg-white p-6 rounded-xl shadow-lg sticky top-24">
+                        <h2 class="text-xl font-semibold mb-6">Filtros</h2>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="font-medium mb-3">Calificación</h3>
+                                <div class="space-y-2">
+                                    <label class="flex items-center space-x-2 cursor-pointer">
+                                        <input type="checkbox" class="form-checkbox text-primary rounded" value="5">
+                                        <span>⭐⭐⭐⭐⭐</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 cursor-pointer">
+                                        <input type="checkbox" class="form-checkbox text-primary rounded" value="4">
+                                        <span>⭐⭐⭐⭐</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 cursor-pointer">
+                                        <input type="checkbox" class="form-checkbox text-primary rounded" value="3">
+                                        <span>⭐⭐⭐</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 cursor-pointer">
+                                        <input type="checkbox" class="form-checkbox text-primary rounded" value="3">
+                                        <span>⭐⭐</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 cursor-pointer">
+                                        <input type="checkbox" class="form-checkbox text-primary rounded" value="3">
+                                        <span>⭐</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="font-medium mb-3">Fecha</h3>
+                                <select class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary">
+                                    <option value="recent">Más recientes</option>
+                                    <option value="old">Más antiguos</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="filter-group">
-                    <h3>Fecha</h3>
-                    <select aria-label="Filtrar por fecha">
-                        <option value="recent">Más recientes</option>
-                        <option value="old">Más antiguos</option>
-                    </select>
-                </div>
-            </div>
-        </aside>
+                </aside>
 
-        <main class="testimonios-content">
-            <h1>Testimonios de Nuestros Clientes</h1>
-            <div class="testimonials-grid">
-                <article class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"Increíble producto, ha superado todas mis expectativas. Lo uso diariamente y noto la diferencia."</p>
-                    <h4>- Ana Martínez</h4>
-                    <span class="date">15/03/2024</span>
-                </article>
-                <article class="testimonial-card">
-                    <div class="stars">★★★★☆</div>
-                    <p>"Muy buena calidad, aunque el envío tardó un poco más de lo esperado."</p>
-                    <h4>- Roberto Silva</h4>
-                    <span class="date">12/03/2024</span>
-                </article>
-                <article class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"El mejor producto ecológico que he probado hasta ahora. ¡Totalmente recomendado!"</p>
-                    <h4>- Laura González</h4>
-                    <span class="date">10/03/2024</span>
-                </article>
-                <article class="testimonial-card">
-                    <div class="stars">★★★☆☆</div>
-                    <p>"Buen producto, pero el precio es un poco elevado para mi gusto."</p>
-                    <h4>- Diego Ramírez</h4>
-                    <span class="date">05/03/2024</span>
-                </article>
-                <article class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"Excelente servicio al cliente y el producto cumple perfectamente su función."</p>
-                    <h4>- Carmen Ortiz</h4>
-                    <span class="date">01/03/2024</span>
-                </article>
-                <article class="testimonial-card">
-                    <div class="stars">★★☆☆☆</div>
-                    <p>"El producto está bien, pero esperaba más durabilidad."</p>
-                    <h4>- Pedro Núñez</h4>
-                    <span class="date">28/02/2024</span>
-                </article>
-                <article class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"¡Fantástico! Ha cambiado completamente mi rutina diaria para mejor."</p>
-                    <h4>- Isabel Torres</h4>
-                    <span class="date">25/02/2024</span>
-                </article>
-                <article class="testimonial-card">
-                    <div class="stars">★★★★☆</div>
-                    <p>"Muy satisfecho con la compra, el empaque es 100% ecológico."</p>
-                    <h4>- Miguel Ángel Ruiz</h4>
-                    <span class="date">20/02/2024</span>
-                </article>
-                <article class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"Increíble relación calidad-precio. Lo recomendaré a todos mis amigos."</p>
-                    <h4>- Sofía Mendoza</h4>
-                    <span class="date">15/02/2024</span>
-                </article>
-                <article class="testimonial-card">
-                    <div class="stars">★★★★☆</div>
-                    <p>"Muy contento con mi compra, aunque me gustaría más variedad de colores."</p>
-                    <h4>- Javier López</h4>
-                    <span class="date">10/02/2024</span>
-                </article>
-            </div>
-        </main>
-    </div>
+                <!-- Grid de testimonios -->
+                <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Testimonios existentes... -->
 
-    <footer>
-        <footer>
-            <div class="footer-container">
-                <div class="contact-info">
-                    <h2>Contacto</h2>
-                    <ul>
-                        <li>📧 <a href="mailto:info@ecoproduct.com">info@ecoproduct.com</a></li>
-                        <li>📞 <a href="tel:+525555555555">55 5555 5555</a></li>
-                        <li style="color: white;">🕒 Lunes a Viernes 9:00 - 18:00</li>
+                    <article class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="flex items-center mb-4 text-yellow-400">⭐⭐⭐⭐⭐</div>
+                        <p class="text-gray-700 mb-4">"El mejor producto ecológico que he probado. La calidad es excepcional y el servicio al cliente es excelente."</p>
+                        <div class="flex justify-between items-center">
+                            <h4 class="font-semibold text-dark">Laura González</h4>
+                            <span class="text-sm text-gray-500">10/03/2024</span>
+                        </div>
+                    </article>
+
+                    <article class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="flex items-center mb-4 text-yellow-400">⭐⭐⭐</div>
+                        <p class="text-gray-700 mb-4">"Buen producto, pero el precio es un poco elevado para mi gusto. La calidad es buena."</p>
+                        <div class="flex justify-between items-center">
+                            <h4 class="font-semibold text-dark">Diego Ramírez</h4>
+                            <span class="text-sm text-gray-500">05/03/2024</span>
+                        </div>
+                    </article>
+
+                    <article class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="flex items-center mb-4 text-yellow-400">⭐⭐⭐⭐⭐</div>
+                        <p class="text-gray-700 mb-4">"Excelente servicio al cliente y el producto cumple perfectamente su función. ¡Muy recomendado!"</p>
+                        <div class="flex justify-between items-center">
+                            <h4 class="font-semibold text-dark">Carmen Ortiz</h4>
+                            <span class="text-sm text-gray-500">01/03/2024</span>
+                        </div>
+                    </article>
+
+                    <article class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="flex items-center mb-4 text-yellow-400">⭐⭐⭐⭐</div>
+                        <p class="text-gray-700 mb-4">"Me encanta que sea un producto eco-amigable. La entrega fue rápida y el empaque es sostenible."</p>
+                        <div class="flex justify-between items-center">
+                            <h4 class="font-semibold text-dark">Pedro Núñez</h4>
+                            <span class="text-sm text-gray-500">28/02/2024</span>
+                        </div>
+                    </article>
+
+                    <article class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="flex items-center mb-4 text-yellow-400">⭐⭐</div>
+                        <p class="text-gray-700 mb-4">"El producto está bien, pero esperaba más durabilidad."</p>
+                        <div class="flex justify-between items-center">
+                            <h4 class="font-semibold text-dark">Laura González</h4>
+                            <span class="text-sm text-gray-500">10/03/2024</span>
+                        </div>
+                    </article>
+
+                    <article class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="flex items-center mb-4 text-yellow-400">⭐⭐⭐⭐</div>
+                        <p class="text-gray-700 mb-4">"Muy contento con mi compra, aunque me gustaría más variedad de colores."</p>
+                        <div class="flex justify-between items-center">
+                            <h4 class="font-semibold text-dark">Javier López</h4>
+                            <span class="text-sm text-gray-500">10/02/2024</span>
+                        </div>
+                    </article>
+
+                    <article class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="flex items-center mb-4 text-yellow-400">⭐⭐⭐⭐⭐</div>
+                        <p class="text-gray-700 mb-4">"¡Fantástico! Ha cambiado completamente mi rutina diaria para mejor."</p>
+                        <div class="flex justify-between items-center">
+                            <h4 class="font-semibold text-dark">Isabel Torres</h4>
+                            <span class="text-sm text-gray-500">25/02/2024</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white mt-20 py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Contacto</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <span class="mr-2">📧</span>
+                            <a href="mailto:info@ecoproduct.com" class="hover:text-primary transition-colors">info@ecoproduct.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="mr-2">📞</span>
+                            <a href="tel:+525555555555" class="hover:text-primary transition-colors">55 5555 5555</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="mr-2">🕒</span>
+                            Lunes a Viernes 9:00 - 18:00
+                        </li>
                     </ul>
                 </div>
-                <div class="important-links">
-                    <h3>Enlaces Importantes</h3>
-                    <ul>
-                        <li><a href="/terminos">→ Términos y Condiciones</a></li>
-                        <li><a href="/privacidad">→ Política de Privacidad</a></li>
-                        <li><a href="/faq">→ Preguntas Frecuentes</a></li>
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Enlaces Importantes</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="/terminos" class="hover:text-primary transition-colors">→ Términos y Condiciones</a>
+                        </li>
+                        <li>
+                            <a href="/privacidad" class="hover:text-primary transition-colors">→ Política de Privacidad</a>
+                        </li>
+                        <li>
+                            <a href="/faq" class="hover:text-primary transition-colors">→ Preguntas Frecuentes</a>
+                        </li>
                     </ul>
                 </div>
-                <div class="social-media">
-                    <h3>Síguenos en Redes</h3>
-                    <ul>
-                        <li><a href="#" aria-label="Síguenos en Facebook">Facebook</a></li>
-                        <li><a href="#" aria-label="Síguenos en Instagram">Instagram</a></li>
-                        <li><a href="#" aria-label="Síguenos en Twitter">TikTok</a></li>
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Síguenos en Redes</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#" class="hover:text-primary transition-colors flex items-center">
+                                <span class="mr-2">📱</span>Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-primary transition-colors flex items-center">
+                                <span class="mr-2">📸</span>Instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-primary transition-colors flex items-center">
+                                <span class="mr-2">🎵</span>TikTok
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </footer>
+        </div>
     </footer>
-
     <script src="./js/theme.js"></script>
+    <script src="./js/menu.js"></script>
 </body>
 </html>
